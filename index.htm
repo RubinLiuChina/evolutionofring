@@ -7,21 +7,21 @@
 <!--
  /* Font Definitions */
  @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin-top:0in;
 	margin-right:0in;
 	margin-bottom:8.0pt;
 	margin-left:0in;
-	line-height:107%;
+	line-height:105%;
 	font-size:11.0pt;
 	font-family:"Calibri",sans-serif;}
 h1
@@ -67,35 +67,55 @@ span.Heading2Char
 	mso-style-link:"Heading 2";
 	font-family:"Times New Roman",serif;
 	font-weight:bold;}
-span.author
-	{mso-style-name:author;}
-span.date
-	{mso-style-name:date;}
-span.problematic
-	{mso-style-name:problematic;}
 span.HTMLPreformattedChar
 	{mso-style-name:"HTML Preformatted Char";
 	mso-style-link:"HTML Preformatted";
 	font-family:"Courier New";}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.msopapdefault, li.msopapdefault, div.msopapdefault
+	{mso-style-name:msopapdefault;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:105%;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.author
+	{mso-style-name:author;}
+span.Date1
+	{mso-style-name:Date1;}
+span.problematic
+	{mso-style-name:problematic;}
 span.code-string
 	{mso-style-name:code-string;}
 span.code-digit
 	{mso-style-name:code-digit;}
+span.code-string1
+	{mso-style-name:code-string1;}
+span.code-digit1
+	{mso-style-name:code-digit1;}
 .MsoChpDefault
-	{font-family:"Calibri",sans-serif;}
+	{font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
 .MsoPapDefault
 	{margin-bottom:8.0pt;
-	line-height:107%;}
+	line-height:105%;}
 @page WordSection1
 	{size:8.5in 11.0in;
 	margin:1.0in 1.25in 1.0in 1.25in;}
 div.WordSection1
 	{page:WordSection1;}
- /* List Definitions */
- ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
 -->
 </style>
 
@@ -111,1266 +131,847 @@ Language</span></b></p>
 
 <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
 normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><img
-width=150 height=94 id="Picture 11" src="index_files/image001.png"></span></p>
+width=150 height=94 src="index_files/image001.gif"></span></p>
 
 <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><a
-href="https://www.codeproject.com/script/Membership/View.aspx?mid=13593229">Rubin
-Liu</a>, 27 Jan 2019 </span></p>
+normal'><u><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:blue'>Rubin Liu</span></u><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+27 Jan 2019 </span></p>
 
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Introduction</span></b></p>
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Introduction</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Since the first release of the Ring
-programming language on January 25, 2016, a lot of new features are added from
-release to release. In this article, I will focus on major features in each new
-release, to save others time when they need to know about what is new?, where
-the development direction is going?, is it worth the time to update or check
-new release or not?</span></p>
+<p style='background:white'>Since the first release of the Ring programming
+language on January 25, 2016, a lot of new features are added from release to
+release. In this article, I will focus on major features in each new release,
+to save others time when they need to know about what is new?, where the
+development direction is going?, is it worth the time to update or check new
+release or not?</p>
 
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Background</span></b></p>
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Background</span></p>
 
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Ring</span></b><span style='font-size:
-12.0pt;font-family:"Times New Roman",serif'> is a dynamic and general-purpose
+<p style='background:white'><b>Ring</b> is a dynamic and general-purpose
 programming language. It can be embedded in C/C++ projects, extended using
 C/C++ code and/or used as a standalone language. The language is portable
 (Windows, Linux, Mac OS X, Android, etc.) and can be used to create console,
 GUI, web, game and mobile applications. Some of the supported programming
 paradigms are procedural, object-oriented, declarative using nested structures,
-and natural programming.</span></p>
+and natural programming.</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>On March 9, 2017, in TIOBE Index, the Ring
+<p style='background:white'>On March 9, 2017, in TIOBE Index, the Ring
 programming language enters the top 100 for the first time. The TIOBE
 Programming Community index is an indicator of the popularity of programming
 languages. The index is updated once a month. It is important to note that the
 TIOBE index is not about the <i>best</i> programming language or the language
-in which <i>most lines of code</i> have been written.</span></p>
+in which <i>most lines of code</i> have been written.</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In February 2018, the Ring programming
-language broke into the top 50 for the first time, just 2 years after the first
-public release in January 2016. Now in January 2019, Ring in the top 100
-according to TIOBE Index.</span></p>
+<p style='background:white'>In February 2018, the Ring programming language
+broke into the top 50 for the first time, just 2 years after the first public
+release in January 2016.</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The language is free open source (<a
+<p style='background:white'>&nbsp;</p>
+
+<p style='background:white'><img width=1026 height=738
+src="index_files/image001.jpg"></p>
+
+<p style='background:white'>&nbsp;</p>
+
+<p style='background:white'>The language is free open source (<a
 href="http://ring-lang.net/">download</a>, <a
-href="https://github.com/ring-lang/ring">source code</a>).</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.1</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better Natural Language Programming
-     Support</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Syntax Flexibility and different
-     styles for I/O and Control Structures</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Generate/Execute Ring Object Files (<a
-     href="http://ring-lang.sourceforge.net/doc1.6/whatisnew.html#id1">*</a>.ringo)</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>StdLib</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> functions and classes written in
-     Ring</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Demo project - Game Engine for 2D
-     Games</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingLibSDL</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Extension</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingSQLite</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Extensions</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>With syntax flexibility, we have the
-freedom to select our favorite style when writing code, based on our previous
-experience in using other programming languages.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Having Ring Object Files (<i>*.ringo</i>),
-we can create closed source applications, distribute applications without
-distributing the source code!</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The new library (</span><span
-style='font-size:10.0pt;font-family:"Courier New"'>StdLib</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> - written in
-Ring) comes with new functions and classes that we can use to develop real
-object-oriented applications (everything is an object) or real functional
-programming software (immutable data, pure functions, map, filter, etc.).</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Extensions like RingSQLite, RingLibSDL,
-and Game Engine for 2D Games, just add more power to the default package of the
-language!</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>This release comes with better natural
-language programming support as we can see in this example.</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'># Natural Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>new program {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        Accept
-2 numbers then print the sum</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>}</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'># Natural Code
-Implementation</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>class program</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        #
-Keywords</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-Accept=0 numbers=0 then=0 print=0 the=0 sum=0</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        #
-Execution</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-braceexpreval x</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-value = x</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-getnumbers</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-for x=1 to value</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-see &quot;Enter Number (&quot;+x+&quot;) :&quot; give nNumber</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-aNumbers + nNumber</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-next</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-getsum</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-nSUm = 0</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                for
-x in aNumbers nSum+= x next</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-see &quot;The Sum : &quot; + nSum</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-private</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-value=0 aNumbers=[]</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>After the support of </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>BraceExprEval()</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> method in
-classes, we can define new natural statements that accept expressions beside
-keywords!</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.2</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release are:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better Ring Notepad (The Language
-     Editor|IDE)</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better RingQt (The GUI Library for
-     Desktop|Mobile)</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Objects Library for RingQt</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingLibCurl</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Extension</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Display Warnings Option</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Ring notepad is an editor for Ring written
-in Ring itself. It started as an example, then become more usable by the
-community, but when comparing it to other code editors, a lot of features are
-missing. With each new release of Ring, it's common to find an updated version
-of Ring Notepad, but we have other options and support for other code editors
-like (Notepad++, Atom, Sublime, Emac, Visual Studio, etc.)</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The Objects Library manage the GUI objects
-and provide a more natural API to quickly create one or many windows from the
-same class. The library provides a way to quickly set methods to be executed
-when an event is fired. The Library is designed to be used with the MVC Design
-Pattern.</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Shrink </span><img width=32 height=32 src="index_files/image002.png"><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;guilib.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>new qApp {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-open_window( :MainWindowController )</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        exec()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>}</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>class
-MainWindowController from WindowsControllerParent</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        oView
-= new MainWindowView</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-SubWindowAction</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-Open_window( :SubWindowController )</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-Last_Window().SetParentObject(self)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>class
-MainWindowView from WindowsViewParent</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        win =
-new qWidget() {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-SetWindowTitle(&quot;Main Window&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-btnSub = new qPushButton(win) {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-setText(&quot;Sub Window&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-setClickEvent( Method( :SubWindowAction ) )</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-}</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-resize(400,400)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        }</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>class
-SubWindowController from WindowsControllerParent</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        oView
-= new SubWindowView</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-SetMainWindowTitleAction</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-Parent().oView.win.SetWindowTitle(&quot;Message from the Sub Window&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-oView.win.SetWindowTitle(&quot;Click Event Done!&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>class
-SubWindowView from WindowsViewParent</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        win =
-new qWidget() {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-SetWindowTitle(&quot;Sub Window&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-btnMsg = new qPushButton(win) {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-setText(&quot;Set Main Window Title&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-setClickEvent( Method( :SetMainWindowTitleAction ) )</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                }</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-btnClose = new qPushButton(win) {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-Move(200,0)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-setText(&quot;Close&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>                       
-setClickEvent( Method( :CloseAction ) )</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-}</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-resize(400,400)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        }</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The objects library solve a problem in the
-language design that avoid creating references when using the assignment
-operator (copy by value instead of copy by reference). The language encourages
-the programmer to avoid </span><span style='font-size:10.0pt;font-family:"Courier New"'>using</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> reference as much
-as possible.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.3</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Embedding Ring in Ring without
-     sharing the State</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingZip</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Library</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Form Designer</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In this release, we have functions for
-embedding Ring in Ring programs without sharing the state.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Advantages:</span></p>
-
-<ol start=1 type=1>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Quick integration for Ring programs
-     and applications together without conflicts</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Execute and run Ring code in safe
-     environments that we can trace</span></li>
-</ol>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>pState =
-ring_state_init()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_runcode(pState,&quot;See
-'Hello, World!'+nl&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_runcode(pState,&quot;x
-= 10&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>pState2 =
-ring_state_init()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_runcode(pState2,&quot;See
-'Hello, World!'+nl&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_runcode(pState2,&quot;x
-= 20&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_runcode(pState,&quot;see
-x +nl&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_runcode(pState2,&quot;see
-x +nl&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>v1 =
-ring_state_findvar(pState,&quot;x&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>v2 =
-ring_state_findvar(pState2,&quot;x&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>see v1[3] + nl</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>see V2[3] + nl</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_delete(pState)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring_state_delete(pState2)</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Ring 1.3 comes with the Form Designer to
-quickly design the GUI application windows/forms and generate the Ring source
-code. The designer is written in Ring (Around 8000 Lines of code) using
-Object-Oriented Programming and Meta-Programming.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=576 height=310
-id="Picture 7" src="index_files/image003.jpg"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.4</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>The Natural Library</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingREPL</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using the Natural Library, we can quickly
-create new natural languages and define new statements!</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using RingREPL (Read-Eval-Print-Loop), we
-can quickly run commands and test some scripts.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The next example from the natural library,
-define a language contains two commands!</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;stdlib.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;naturallib.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>New
-NaturalLanguage {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        SetLanguageName(:MyLanguage)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-SetCommandsPath(CurrentDir()+&quot;/../command&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-SetPackageName(&quot;MyLanguage.Natural&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-UseCommand(:Hello)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-UseCommand(:Count)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-RunFile(&quot;program.txt&quot;)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>}</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The next code for the </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>Hello</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> command:</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>DefineNaturalCommand.SyntaxIsKeyword([</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-:Package = &quot;MyLanguage.Natural&quot;,</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-:Keyword = :hello,</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-:Function = func {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-See  &quot;Hello, Sir!&quot; + nl + nl</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        }</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>])</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.5</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Trace Library and Interactive
-     Debugger</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Type Hints Library</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingFreeGLUT</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Extension</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingOpenGL</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Extension</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using the Trace library and the
-Interactive debugger, we can detect and solve the bugs in Ring programs.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Also using the Type hints library, we can
-add type annotactions to our functions.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The next example uses a Breakpoint to open
-the Interactive Debugger!</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;tracelib.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>test1()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>func test1</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        x = 10</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        see
-:test1 + nl</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        t = 12</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>       
-BreakPoint()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        see
-&quot;After breakpoint!&quot; +nl</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        see
-&quot;t = &quot; + t + nl</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        see
-&quot;End of program!&quot; + nl</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The next example uses the </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>typehints</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> library:</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;typehints.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>see
-sayHello(&quot;Rubin&quot;);</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>string func
-sayHello(string name) {</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        return
-&quot;Hello &quot; + name ;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>}</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.6</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Ring2EXE</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingConsoleColors</span><span style='font-size:
-     12.0pt;font-family:"Times New Roman",serif'> Extension</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingMurmurHash</span><span style='font-size:
-     12.0pt;font-family:"Times New Roman",serif'> Extension</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using Ring2EXE, we can distribute our
-applications as binary package without including the source code or using the
-Ring object files (<i>*.ringo</i>) that requires having the RingVM.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Ring2EXE can prepare the application to be
-distributed for Windows, Linux and macOS.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Also Ring2EXE supports distribution for
-Mobile devices (using Qt):</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>ring2exe
-formdesigner.ring -dist -mobileqt</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=576 height=310
-id="Picture 6" src="index_files/image004.jpg"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.7</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Load package command</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Changing the behavior of the input
-     and output commands</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>RingLibuv</span><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'> Extension</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using the &quot;<b>Load package</b>&quot;
-command, we can load libraries in a different global scope. This is important
-to avoid conflicts in global variables between libraries that use them.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Also, Ring 1.7 comes with new functions
-like </span><span style='font-size:10.0pt;font-family:"Courier New"'>ringvm_see()</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> and </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>ringvm_give()</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> that can be used
-to change the behavior of the input and output commands.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using the </span><span style='font-size:
-10.0pt;font-family:"Courier New"'>RingLibuv</span><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'> extension, we can access all of the </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>Libuv</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> library features.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The next example uses </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>Libuv</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> threads, which is
-very simple and nice.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Remember that Ring doesn't have Global
-Interpreter Lock (No GIL), so we can have real threads executing Ring
-instructions in parallel at the same time which is more faster than other
-scripting languages that use GIL.</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;libuv.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load
-&quot;objectslib.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>?
-&quot;Testing RingLibuv - Threads - Using Classes&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>open_object(:MyThreads)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>class
-MyThreads from ObjectControllerParent</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-Start</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-one_id = new_uv_thread_t()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-two_id = new_uv_thread_t()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-uv_thread_create(one_id, Method(:One))</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-uv_thread_create(two_id, Method(:Two))</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-uv_thread_join(one_id)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-uv_thread_join(two_id)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-destroy_uv_thread_t(one_id)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-destroy_uv_thread_t(two_id)</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-one</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-? &quot;Message from the First Thread!&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        func
-Two</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>               
-? &quot;Message from the Second Thread!&quot;</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.8</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better Performance (The performance
-     gain from 10% to 100% based on the application)</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>More 3D Samples</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>FoxRing Library (library with some
-     functions similar to FoxPro)</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:10.0pt;
-     font-family:"Courier New"'>General improvements to the Compiler, VM,
-     Libraries &amp; Tools</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>This release comes with better performance
-and more 3D samples to get an idea about the performance in this release.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=576 height=310
-id="Picture 5" src="index_files/image005.jpg"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In this release, the Ring compiler ignore
-new lines between keywords and the parameters in the same command.</span></b></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>see</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        Hello,
-World!</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>test()</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>func</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>#======================#</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        Test</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>#======================#</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        ?</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        &quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        Hello
-from the Test function</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        &quot;</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.9</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release are:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>More Games are added to the
-     applications folder (Gold Magic 800, 2048, Tessera, Othello, etc.)</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better Ring Notepad (The Language
-     Editor|IDE) - New style &amp; Tabs for opened files</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better RingQt (The GUI Library) -
-     More classes are added</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Big Number Library</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>PostgreSQL Extension</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Deploying web applications in the
-     Cloud</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better Memory Management</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Ring Notepad is more better in this
-release, we have tabs for the opened files and better organization for the
-dock-able windows.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=576 height=309
-id="Picture 4" src="index_files/image006.jpg"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Also more games are added to the
-applications folder.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Gold Magic 800 is a puzzle game developed
-using Ring, RingAllegro and RingOpenGL.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=576 height=324
-id="Picture 3" src="index_files/image007.jpg"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Also, the new games include an
-implementation for the famous 2048 game using Ring and RingQt.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=373 height=726
-id="Picture 2" src="index_files/image008.png"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Ring 1.9 comes with better memory
-management.&nbsp;The Ring API is updated to include </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>RING_API_RETMANAGEDCPOINTER()</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'>
-function.&nbsp;Using this function, the Ring extensions written in C/C++
-languages can return a managed pointer to Ring. This pointer can be controlled
-by the Ring VM using reference counting.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In Ring, the Garbage Collector used Escape
-Analysis and Reference Counting.&nbsp;According to Ring website, in most cases
-(90%), the GC uses Escape Analysis (Faster).</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>This release comes with more functions in
-the </span><span style='font-size:10.0pt;font-family:"Courier New"'>StdLib</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'> like </span><span
-style='font-size:10.0pt;font-family:"Courier New"'>List2Code()</span><span
-style='font-size:12.0pt;font-family:"Times New Roman",serif'>. This function
-converts a Ring list during the runtime to Ring source code that we can save to
-source files.</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>load &quot;stdlibcore.ring&quot;</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>aList = 1:10</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>?
-list2Code(aList)</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Output:</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Hide
-&nbsp; Copy Code</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>[</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>        1,2,3,4,5,6,7,8,9,10</span></p>
-
-<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-normal'><span style='font-size:10.0pt;font-family:"Courier New"'>]</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Ring 1.10</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Top new features in this release:</span></p>
-
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>More Games</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Better Tests</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Extension for Visual Studio Code</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>The Ring Package Manager (</span><span
-     style='font-size:10.0pt;font-family:"Courier New"'>RingPM</span><span
-     style='font-size:12.0pt;font-family:"Times New Roman",serif'>)</span></li>
-</ul>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Using the Ring package manager we can
-install, update and remove packages, Also we can create and publish new
-packages for other developers using GitHub. The Package manager uses Semantic Versioning
-for managing difference between updates.</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The next screen shot shows the output of
-the (ringpm list) command that display a list of installed packages</span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'><img border=0 width=577 height=364
-id="Picture 1" src="index_files/image009.jpg"></span></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>We can run an application using the
-(ringpm run) command, for example to run the TicTacToe game we can type (ringpm
-run tictactoe)</span></p>
-
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>Points of Interest</span></b></p>
-
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>With each new release, the language comes
-with a lot of new features based on the community requirements. Having a small
+href="https://github.com/ring-lang/ring">source code</a>)</p>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.1</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better Natural Language Programming Support</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Syntax Flexibility and different styles for I/O and Control
+Structures</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Generate/Execute Ring Object Files (<a
+href="http://ring-lang.sourceforge.net/doc1.6/whatisnew.html#id1"><span
+class=problematic><span id=id2>*</span></span></a>.ringo)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>StdLib</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> functions and classes written in Ring</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Demo project - Game Engine for 2D Games</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingLibSDL</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingSQLite</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extensions</span></p>
+
+<p style='background:white'>With syntax flexibility, we have the freedom to
+select our favorite style when writing code, based on our preivous experience
+in using other programming languages.</p>
+
+<p style='background:white'>Having Ring Object Files (<em><span
+style='font-family:"Segoe UI",sans-serif'>*.ringo</span></em>), we can create closed
+source applications, distribute applications without distributing the source
+code!</p>
+
+<p style='background:white'>The new library (<code><span style='font-size:11.0pt'>StdLib</span></code>
+- written in Ring) comes with new functions and classes that we can use to
+develop real object-oriented applications (everything is an object) or real
+functional programming software (immutable data, pure functions, map, filter,
+etc.).</p>
+
+<p style='background:white'>Extensions like RingSQLite, RingLibSDL, and Game
+Engine for 2D Games, just add more power to the default package of the
+language!</p>
+
+<p style='background:white'>This release comes with better natural language
+programming support as we can see in this example.</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(226134);"
+id=prehide226134># Natural Code</pre><pre style='background:#FBEDBB'>new program {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accept 2 numbers then print the sum</pre><pre
+style='background:#FBEDBB'>}</pre><pre style='background:#FBEDBB'>&nbsp;</pre><pre
+style='background:#FBEDBB'># Natural Code Implementation</pre><pre
+style='background:#FBEDBB'>class program</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Keywords</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accept=0 numbers=0 then=0 print=0 the=0 sum=0</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Execution</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func braceexpreval x</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value = x</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func getnumbers</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for x=1 to value</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see &quot;Enter Number (&quot;+x+&quot;) :&quot; give nNumber</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aNumbers + nNumber</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func getsum</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nSUm = 0</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for x in aNumbers nSum+= x next</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see &quot;The Sum : &quot; + nSum</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; private</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value=0 aNumbers=[]</pre>
+
+<p style='background:white'>After the support of <code><span style='font-size:
+11.0pt'>BraceExprEval()</span></code> method in classes, we can define new
+natural statements that accept expressions beside keywords!</p>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.2</span></p>
+
+<p style='background:white'>Top new features in this release are:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better Ring Notepad (The Language Editor|IDE)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better RingQt (The GUI Library for Desktop|Mobile)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Objects Library for RingQt</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingLibCurl</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Display Warnings Option</span></p>
+
+<p style='background:white'>Ring notepad is an editor for Ring written in Ring
+itself. It started as an example, then become more usable by the community, but
+when comparing it to other code editors, a lot of features are missing. With
+each new release of Ring, it's common to find an updated version of Ring
+Notepad, but we have other options and support for other code editors like
+(Notepad++, Atom, Sublime, Emac, Visual Studio, etc.)</p>
+
+<p style='background:white'>The Objects Library manage the GUI objects and
+provide a more natural API to quickly create one or many windows from the same
+class. The library provides a way to quickly set methods to be executed when an
+event is fired. The Library is designed to be used with the MVC Design Pattern.</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(156954);"
+id=prehide156954>load &quot;guilib.ring&quot;</pre><pre style='background:#FBEDBB'>&nbsp;</pre><pre
+style='background:#FBEDBB'>new qApp {</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; open_window( :MainWindowController )</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exec()</pre><pre
+style='background:#FBEDBB'>}</pre><pre style='background:#FBEDBB'>&nbsp;</pre><pre
+style='background:#FBEDBB'>class MainWindowController from WindowsControllerParent</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oView = new MainWindowView</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func SubWindowAction</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Open_window( :SubWindowController )</pre><pre
+style='background:#FBEDBB'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last_Window().SetParentObject(self)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>class MainWindowView from WindowsViewParent</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; win = new qWidget() {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetWindowTitle(&quot;Main Window&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btnSub = new qPushButton(win) {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setText(&quot;Sub Window&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setClickEvent( Method( :SubWindowAction ) )</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resize(400,400)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>class SubWindowController from WindowsControllerParent</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oView = new SubWindowView</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func SetMainWindowTitleAction</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Parent().oView.win.SetWindowTitle(&quot;Message from the Sub Window&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oView.win.SetWindowTitle(&quot;Click Event Done!&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>class SubWindowView from WindowsViewParent</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; win = new qWidget() {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetWindowTitle(&quot;Sub Window&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btnMsg = new qPushButton(win) {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setText(&quot;Set Main Window Title&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setClickEvent( Method( :SetMainWindowTitleAction ) )</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btnClose = new qPushButton(win) {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Move(200,0)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setText(&quot;Close&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setClickEvent( Method( :CloseAction ) )</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resize(400,400)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+
+<p style='background:white'>The objects library solve a problem in the language
+design that avoid creating references when using the assignment operator (copy
+by value instead of copy by reference). The language encourages the programmer
+to avoid <code><span style='font-size:11.0pt'>using</span></code> reference as
+much as possible.</p>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.3</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Embedding Ring in Ring without sharing the State</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingZip</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Library</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Form Designer</span></p>
+
+<p style='background:white'>In this release, we have functions for embedding
+Ring in Ring programs without sharing the state.</p>
+
+<p style='background:white'>Advantages:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>1.</span><span style='font-size:7.0pt;line-height:105%;
+color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;color:#111111'>Quick
+integration for Ring programs and applications together without conflicts</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>2.</span><span style='font-size:7.0pt;line-height:105%;
+color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style='font-size:
+10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;color:#111111'>Execute
+and run Ring code in safe environments that we can trace</span></p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(322996);"
+id=prehide322996>pState = ring_state_init()</pre><pre style='background:#FBEDBB'>ring_state_runcode(pState,&quot;See 'Hello, World!'+nl&quot;)</pre><pre
+style='background:#FBEDBB'>ring_state_runcode(pState,&quot;x = 10&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>pState2 = ring_state_init()</pre><pre
+style='background:#FBEDBB'>ring_state_runcode(pState2,&quot;See 'Hello, World!'+nl&quot;)</pre><pre
+style='background:#FBEDBB'>ring_state_runcode(pState2,&quot;x = 20&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>ring_state_runcode(pState,&quot;see x +nl&quot;)</pre><pre
+style='background:#FBEDBB'>ring_state_runcode(pState2,&quot;see x +nl&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>v1 = ring_state_findvar(pState,&quot;x&quot;)</pre><pre
+style='background:#FBEDBB'>v2 = ring_state_findvar(pState2,&quot;x&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>see v1[3] + nl</pre><pre
+style='background:#FBEDBB'>see V2[3] + nl</pre><pre style='background:#FBEDBB'>&nbsp;</pre><pre
+style='background:#FBEDBB'>ring_state_delete(pState)</pre><pre
+style='background:#FBEDBB'>ring_state_delete(pState2)</pre>
+
+<p style='background:white'>Ring 1.3 comes with the Form Designer to quickly
+design the GUI application windows/forms and generate the Ring source code. The
+designer is written in Ring (Around 8000 Lines of code) using Object-Oriented
+Programming and Meta-Programming.</p>
+
+<p style='background:white'><img border=0 width=1146 height=615
+src="index_files/image003.jpg"></p>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.4</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>The Natural Library</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingREPL</span></code></p>
+
+<p style='background:white'>Using the Natural Library, we can quickly create
+new natural languages and define new statements!</p>
+
+<p style='background:white'>Using RingREPL (Read-Eval-Print-Loop), we can quickly
+run commands and test some scripts.</p>
+
+<p style='background:white'>The next example from the natural library, define a
+language contains two commands!</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(620378);"
+id=prehide620378>load &quot;stdlib.ring&quot;</pre><pre style='background:#FBEDBB'>load &quot;naturallib.ring&quot;</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>New NaturalLanguage {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetLanguageName(:MyLanguage)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetCommandsPath(CurrentDir()+&quot;/../command&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetPackageName(&quot;MyLanguage.Natural&quot;)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UseCommand(:Hello)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UseCommand(:Count)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RunFile(&quot;program.txt&quot;)</pre><pre
+style='background:#FBEDBB'>}</pre>
+
+<p style='background:white'>The next code for the <code><span style='font-size:
+11.0pt'>Hello</span></code> command:</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(469569);"
+id=prehide469569>DefineNaturalCommand.SyntaxIsKeyword([</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Package = &quot;MyLanguage.Natural&quot;,</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Keyword = :hello,</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :Function = func {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; See&nbsp; &quot;Hello, Sir!&quot; + nl + nl</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre><pre
+style='background:#FBEDBB'>])</pre>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.5</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Trace Library and Interactive Debugger</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Type Hints Library</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingFreeGLUT</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingOpenGL</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p style='background:white'>Using the Trace library and the Interactive
+debugger, we can detect and solve the bugs in Ring programs.</p>
+
+<p style='background:white'>Also using the Type hints library, we can add type
+annotactions to our functions.</p>
+
+<p style='background:white'>The next example uses a Breakpoint to open the
+Interactive Debugger!</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(860606);"
+id=prehide860606>load &quot;tracelib.ring&quot;</pre><pre style='background:
+#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>test1()</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>func test1</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x = 10</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see :test1 + nl</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = 12</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BreakPoint()</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see &quot;After breakpoint!&quot; +nl</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see &quot;t = &quot; + t + nl</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; see &quot;End of program!&quot; + nl</pre>
+
+<p style='background:white'>The next example uses the <code><span
+style='font-size:11.0pt'>typehints</span></code> library:</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(207104);"
+id=prehide207104>load &quot;typehints.ring&quot;</pre><pre style='background:
+#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>see sayHello(&quot;Rubin&quot;);</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>string func sayHello(string name) {</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return &quot;Hello &quot; + name ;</pre><pre
+style='background:#FBEDBB'>}</pre>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.6</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Ring2EXE</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingConsoleColors</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingMurmurHash</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p style='background:white'>Using Ring2EXE, we can distribute our applications
+as binary package without including the source code or using the Ring object
+files (<em><span style='font-family:"Segoe UI",sans-serif'>*.ringo</span></em>)
+that requires having the RingVM.</p>
+
+<p style='background:white'>Ring2EXE can prepare the application to be
+distributed for Windows, Linux and macOS.</p>
+
+<p style='background:white'>Also Ring2EXE supports distribution for Mobile
+devices (using Qt):</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(104661);"
+id=prehide104661>ring2exe formdesigner.ring -dist -mobileqt</pre>
+
+<p style='background:white'><img border=0 width=1142 height=614
+src="index_files/image004.jpg"></p>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.7</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Load package command</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Changing the behavior of the input and output commands</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>RingLibuv</span></code><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> Extension</span></p>
+
+<p style='background:white'>Using the &quot;<strong><span style='font-family:
+"Segoe UI",sans-serif'>Load package</span></strong>&quot; command, we can load libraries
+in a different global scope. This is important to avoid conflicts in global
+variables between libraries that use them.</p>
+
+<p style='background:white'>Also, Ring 1.7 comes with new functions like <code><span
+style='font-size:11.0pt'>ringvm_see()</span></code> and <code><span
+style='font-size:11.0pt'>ringvm_give()</span></code> that can be used to change
+the behavior of the input and output commands.</p>
+
+<p style='background:white'>Using the <code><span style='font-size:11.0pt'>RingLibuv</span></code>
+extension, we can access all of the <code><span style='font-size:11.0pt'>Libuv</span></code>
+library features.</p>
+
+<p style='background:white'>The next example uses <code><span style='font-size:
+11.0pt'>Libuv</span></code> threads, which is very simple and nice.</p>
+
+<p style='background:white'>Remember that Ring doesn't have Global Interpreter
+Lock (No GIL), So we can have real threads executing Ring instructions in
+parallel at the same time which is more faster than other scripting languages
+that use GIL.</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(654411);"
+id=prehide654411>load &quot;libuv.ring&quot;</pre><pre style='background:#FBEDBB'>load &quot;objectslib.ring&quot;</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>? &quot;Testing RingLibuv - Threads - Using Classes&quot;</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>open_object(:MyThreads)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>class MyThreads from ObjectControllerParent</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func Start</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; one_id = new_uv_thread_t()</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; two_id = new_uv_thread_t()</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uv_thread_create(one_id, Method(:One))</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uv_thread_create(two_id, Method(:Two))</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uv_thread_join(one_id)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uv_thread_join(two_id)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; destroy_uv_thread_t(one_id)</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; destroy_uv_thread_t(two_id)</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func one</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ? &quot;Message from the First Thread!&quot;</pre><pre
+style='background:#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; func Two</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ? &quot;Message from the Second Thread!&quot;</pre>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.8</span></p>
+
+<p style='background:white'>Top new features in this release:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better Performance (The performance gain from 10% to 100% based
+on the application)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>More 3D Samples</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>FoxRing Library (library with some functions similar to FoxPro)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><code><span style='font-size:10.0pt;line-height:105%'>General
+improvements to the Compiler, VM, Libraries &amp; Tools</span></code></p>
+
+<p style='background:white'>This release comes with better performance and more
+3D samples to get an idea about the performance in this release.</p>
+
+<p style='background:white'><img border=0 width=1458 height=784
+src="index_files/image005.jpg"></p>
+
+<p style='background:white'><code><span style='font-size:11.0pt'>In this
+release the Ring compiler ignore new lines between keywords and the parameters
+in the same command</span></code></p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(336220);"
+id=prehide336220>see</pre><pre style='background:#FBEDBB'><span
+class=code-string1>&quot;</span></pre><pre style='background:#FBEDBB'><span
+class=code-string1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hello, World!</span></pre><pre
+style='background:#FBEDBB'><span class=code-string1>&quot;</span></pre><pre
+style='background:#FBEDBB'>test()</pre><pre style='background:#FBEDBB'>&nbsp;</pre><pre
+style='background:#FBEDBB'>func</pre><pre style='background:#FBEDBB'>#======================#</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Test</pre><pre
+style='background:#FBEDBB'>#======================#</pre><pre style='background:
+#FBEDBB'>&nbsp;</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ?</pre><pre
+style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+class=code-string1>&quot;</span></pre><pre style='background:#FBEDBB'><span
+class=code-string1>&nbsp;</span></pre><pre style='background:#FBEDBB'><span
+class=code-string1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hello from the Test function</span></pre><pre
+style='background:#FBEDBB'><span class=code-string1>&nbsp;</span></pre><pre
+style='background:#FBEDBB'><span class=code-string1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;</span></pre>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Ring 1.9</span></p>
+
+<p style='background:white'>Top new features in this release are:</p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>More Games are added to the applications folder (Gold Magic 800,
+2048, Tessera, Othello, etc)</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better Ring Notepad (The Language Editor|IDE) - New style &amp;
+Tabs for opened files</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better RingQt (The GUI Library) - More classes are added</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Big Number Library</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>PostgreSQL Extension</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Deploying web applications in the Cloud</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>Better Memory Management</span></p>
+
+<p style='background:white'>Ring Notepad is more better in this release, we
+have tabs for the opened files and better organization for the dock-able
+windows.</p>
+
+<p style='background:white'><img border=0 width=776 height=416
+src="index_files/image006.jpg"></p>
+
+<p style='background:white'>Also more games are added to the applications folder</p>
+
+<p style='background:white'>Gold Magic 800 is a puzzle game developed using
+Ring, RingAllegro and RingOpenGL</p>
+
+<p style='background:white'><img border=0 width=773 height=435
+src="index_files/image007.jpg"></p>
+
+<p style='background:white'>Also, The new games include an implementation for
+the famous 2048 game using Ring and RingQt</p>
+
+<p style='background:white'><img border=0 width=298 height=581
+src="index_files/image008.png"></p>
+
+<p style='background:white'>Ring 1.9 comes with better memory management, The
+Ring API is updated to include RING_API_RETMANAGEDCPOINTER() function, Using
+this function, the Ring extensions written in C/C++ languages can return a
+managed pointer to Ring. This pointer can be controlled by the Ring VM using
+reference counting.</p>
+
+<p style='background:white'>In Ring, The Garbage Collector used Escape Analysis
+and Reference Counting, According to Ring website, In most cases (90%) The GC
+uses Escape Analysis (Faster)</p>
+
+<p style='background:white'>This release comes with more functions in the
+StdLib like List2Code(), This function convert a Ring list during the runtime
+to Ring source code that we can save to source files.</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(199283);"
+id=prehide199283>load <span class=code-string1>&quot;stdlibcore.ring&quot;</span></pre><pre
+style='background:#FBEDBB'>aList = <span class=code-digit1>1</span>:<span
+class=code-digit1>10</span></pre><pre style='background:#FBEDBB'>? list2Code(aList)</pre>
+
+<p style='background:white'>Output:</p>
+
+<pre style='background:#FBEDBB'><span onclick="processCodeBlocks.togglePre(361896);"
+id=prehide361896> [</pre><pre style='background:#FBEDBB'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+class=code-digit1>1</span>,<span class=code-digit1>2</span>,<span
+class=code-digit1>3</span>,<span class=code-digit1>4</span>,<span
+class=code-digit1>5</span>,<span class=code-digit1>6</span>,<span
+class=code-digit1>7</span>,<span class=code-digit1>8</span>,<span
+class=code-digit1>9</span>,<span class=code-digit1>10</span></pre><pre
+style='background:#FBEDBB'>]</pre>
+
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>Points of
+Interest</span></p>
+
+<p style='background:white'>With each new release, the language comes with a
+lot of new features based on the community requirements. Having a small
 community around the language since it's still a new language leads to quick
-progress in this stage.</span></p>
+progress in this stage.</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>Each new release is compatible (99.99%)
-with the previous releases, keeping compatibility helps a lot to upgrade from
-old releases to new releases.</span></p>
+<p style='background:white'>Each new release is compatible (99.99%) with the
+previous releases, keeping compatibility helps a lot to upgrade from old
+releases to new releases.</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>It looks like most of Ring developers come
-from the Python and Ruby community. To use Ring for Desktop and Mobile
-development, unlike PyQt, RingQt is free-open source and comes with the
-language package. Also, the Ring Form Designer is written in Ring itself which
-adds more user experience similar to Visual Basic to a Dynamic programming
-language.</span></p>
+<p style='background:white'>It looks like most of Ring developers come from the
+Python and Ruby community. To use Ring for Desktop and Mobile development,
+unlike PyQt, RingQt is free-open source and comes with the language package.
+Also, the Ring Form Designer is written in Ring itself which adds more user
+experience similar to Visual Basic to a Dynamic programming language.</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The language looks good for games
-prototyping, It comes with direct support for many popular libraries like
-(Allegro, LibSDL, OpenGL, etc).</span></p>
+<p style='background:white'>The language looks good for games prototyping, It
+comes with direct support for many popular libraries like (Allegro, LibSDL,
+OpenGL, etc).</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The problem with this language is having a
-lot of features and many ways to do things which add an extra time during
-development to decide what are the best features to use for solving a specific
-problem. For experts, this could be more flexibility and power! But for others,
-this may increase the learning curve for a language designed to be simple!</span></p>
+<p style='background:white'>The problem with this language is having a lot of
+features and many ways to do things which add an extra time during development
+to decide what are the best features to use for solving a specific problem. For
+experts, this could be more flexibility and power! But for others, this may
+increase the learning curve for a language designed to be simple!</p>
 
-<p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
-font-family:"Times New Roman",serif'>History</span></b></p>
+<p class=MsoNormal style='margin-top:15.0pt;margin-right:0in;margin-bottom:
+8.25pt;margin-left:0in;background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>History</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>The time between two releases is not big!</span></p>
+<p style='background:white'>The time between two releases is not big!</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In 2016, the Ring team released two
-versions of the language (Ring 1.0 and Ring 1.1)</span></p>
+<p style='background:white'>In 2016, the Ring team released two versions of the
+language (Ring 1.0 and Ring 1.1)</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In 2017, they provided new five releases!
-(Ring 1.2, Ring 1.3, Ring 1.4, Ring 1.5 and Ring 1.6)</span></p>
+<p style='background:white'>In 2017, they provided new five releases! (Ring 1.2,
+Ring 1.3, Ring 1.4, Ring 1.5 and Ring 1.6)</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In 2018, they provided three releases
-(Ring 1.7, Ring 1.8 and Ring 1.9)</span></p>
+<p style='background:white'>In 2018, they provided three releases (Ring 1.7,
+Ring 1.8 and Ring 1.9)</p>
 
-<p class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-font-family:"Times New Roman",serif'>In 2019, Ring 1.10 was released.</span></p>
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In January 2016, Ring 1.0 was released.</span></p>
 
-<ul type=disc>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In January 2016, Ring 1.0 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In October 2016, Ring 1.1 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In January 25, 2017, Ring 1.2 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In May 15, 2017, Ring 1.3 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In June 29, 2017, Ring 1.4 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In August 21, 2017, Ring 1.5 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In November 30, 2017, Ring 1.6 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In January 25, 2018, Ring 1.7 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In June 25, 2018, Ring 1.8 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In October 6, 2018, Ring 1.9 was
-     released.</span></li>
- <li class=MsoNormal style='line-height:normal'><span style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>In January 25, 2019, Ring 1.10 was
-     released.</span></li>
-</ul>
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In October 2016, Ring 1.1 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In January 25, 2017, Ring 1.2 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In May 15, 2017, Ring 1.3 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In June 29, 2017, Ring 1.4 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In August 21, 2017, Ring 1.5 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In November 30, 2017, Ring 1.6 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In January 25, 2018, Ring 1.7 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>·</span><span
+style='font-size:7.0pt;line-height:105%;color:#111111'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In June 25, 2018, Ring 1.8 was released.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:-.25in;background:white'><span
+style='font-size:10.0pt;line-height:105%;font-family:Symbol;color:#111111'>· </span><span
+style='font-size:7.0pt;line-height:105%;color:#FF9900'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'>In October 6, 2018, Ring 1.9 was released.</span><span
+style='font-size:22.0pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#FF9900'> </span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:22.0pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#FF9900'>About the
+Author</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:10.5pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#111111'><img
+border=0 width=150 height=94 src="index_files/image009.png"></span></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:10.5pt;
+line-height:105%;font-family:"Segoe UI",sans-serif;color:#111111'><a
+href="https://www.codeproject.com/Members/RubinLiu"
+id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink"><span
+style='font-size:16.5pt;line-height:105%;color:#333333'>Rubin Liu</span></a></span></b><span
+style='font-size:10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;
+color:#111111'> </span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td nowrap rowspan=2 style='padding:.75pt .75pt .75pt .75pt'></td>
+  <td nowrap style='padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span style='font-size:10.5pt;line-height:105%;font-family:
+  "Segoe UI",sans-serif;color:gray'><span
+  id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software
+  Developer (Senior)</span> </span></p>
+  </td>
+  <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span>
+  <td rowspan=2 style='padding:.75pt .75pt .75pt 11.25pt'></td>
+ </tr>
+ <tr>
+  <td style='padding:.75pt .75pt .75pt .75pt'><span
+  id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">
+  <p class=MsoNormal><span style='font-size:10.5pt;line-height:105%;font-family:
+  "Segoe UI",sans-serif;color:#111111'>China </span><span style='font-size:
+  10.5pt;line-height:105%;font-family:"Segoe UI",sans-serif;color:#111111'><img
+  border=0 width=16 height=11 src="index_files/image010.gif" alt=China></span></p>
+  </td>
+  <span style='font-size:11.0pt;line-height:105%;font-family:"Calibri",sans-serif'></span></span>
+ </tr>
+</table>
 
 <p class=MsoNormal>&nbsp;</p>
 
